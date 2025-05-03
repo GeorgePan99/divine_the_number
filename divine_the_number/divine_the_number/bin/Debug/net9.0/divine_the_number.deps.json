@@ -13,6 +13,14 @@
         },
         "runtime": {
           "divine_the_number.dll": {}
+        },
+        "resources": {
+          "en/divine_the_number.resources.dll": {
+            "locale": "en"
+          },
+          "ru/divine_the_number.resources.dll": {
+            "locale": "ru"
+          }
         }
       },
       "Microsoft.DotNet.ILCompiler/9.0.4": {},
