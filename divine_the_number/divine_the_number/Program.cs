@@ -1,8 +1,14 @@
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
+using System.Threading;
+using System.Resources;
+using Microsoft.Extensions.Localization;
 
 var builder = WebApplication.CreateBuilder();
 builder.Configuration.AddJsonFile("config.json");
+
+
 var app = builder.Build();
 
 
@@ -12,19 +18,21 @@ int MAX_VALUE = Convert.ToInt32(app.Configuration["max_value"]);
 var rand = new Random();
 int mystery_vaue = rand.Next(MIN_VALUE, MAX_VALUE + 1);
 
+
+
 void Greeting(int min, int max)
 {
-    string text = $"""
+    string greeting_text = $"""
             Добро пожаловать в игру "Угадай число"!
         Наши правила невероятно просты: мы загадываем вам число в диапазоне от {min} до {max},
         а вам предстоит его угадать!
             Если вы поймете, что вы не в силах больше справляться,
-        вы можете ввести слово "giveup", и таком образом, прекратите свои попытки.
+        вы можете ввести слово "giveup", и таким образом, прекратите свои попытки.
         А мы, в свою очередь, скажем, какое число загадали.
             Если вы захотите выйти из игры, напишите "exit".
         Удачи!
         """;
-    Console.WriteLine(text);
+    Console.WriteLine(greeting_text, min, max);
     Console.WriteLine();
     Console.WriteLine("Введите предполагаемое число");
 }
@@ -82,6 +90,7 @@ void Input()
         IsCommand(user_input);
     }
 }
+
 
 Greeting(MIN_VALUE, MAX_VALUE);
 Input();

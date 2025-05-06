@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{CB8D82C2-6628-4B9A-9BB3-FB28B62E13B1}|divine_the_number\\divine_the_number.csproj|solutionrelative:divine_the_number\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB8D82C2-6628-4B9A-9BB3-FB28B62E13B1}|divine_the_number\\divine_the_number.csproj|c:\\users\\\u0433\u0435\u043E\u0440\u0433\u0438\u0439\\desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CB8D82C2-6628-4B9A-9BB3-FB28B62E13B1}|divine_the_number\\divine_the_number.csproj|solutionrelative:divine_the_number\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CB8D82C2-6628-4B9A-9BB3-FB28B62E13B1}|divine_the_number\\divine_the_number.csproj|c:\\users\\\u0433\u0435\u043E\u0440\u0433\u0438\u0439\\desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\resources\\gameresource.ru.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{CB8D82C2-6628-4B9A-9BB3-FB28B62E13B1}|divine_the_number\\divine_the_number.csproj|solutionrelative:divine_the_number\\resources\\gameresource.ru.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8D82C2-6628-4B9A-9BB3-FB28B62E13B1}|divine_the_number\\divine_the_number.csproj|c:\\users\\\u0433\u0435\u043E\u0440\u0433\u0438\u0439\\desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\resources\\gameresource.en.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{CB8D82C2-6628-4B9A-9BB3-FB28B62E13B1}|divine_the_number\\divine_the_number.csproj|solutionrelative:divine_the_number\\resources\\gameresource.en.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +22,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameResource.en.resx",
+              "DocumentMoniker": "C:\\Users\\\u0413\u0435\u043E\u0440\u0433\u0438\u0439\\Desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\Resources\\GameResource.en.resx",
+              "RelativeDocumentMoniker": "divine_the_number\\Resources\\GameResource.en.resx",
+              "ToolTip": "C:\\Users\\\u0413\u0435\u043E\u0440\u0433\u0438\u0439\\Desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\Resources\\GameResource.en.resx",
+              "RelativeToolTip": "divine_the_number\\Resources\\GameResource.en.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-05-06T14:05:25.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "config.json",
-              "DocumentMoniker": "C:\\Users\\\u0413\u0435\u043E\u0440\u0433\u0438\u0439\\Desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\config.json",
-              "RelativeDocumentMoniker": "divine_the_number\\config.json",
-              "ToolTip": "C:\\Users\\\u0413\u0435\u043E\u0440\u0433\u0438\u0439\\Desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\config.json",
-              "RelativeToolTip": "divine_the_number\\config.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-02T08:19:09.341Z"
+              "Title": "GameResource.ru.resx",
+              "DocumentMoniker": "C:\\Users\\\u0413\u0435\u043E\u0440\u0433\u0438\u0439\\Desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\Resources\\GameResource.ru.resx",
+              "RelativeDocumentMoniker": "divine_the_number\\Resources\\GameResource.ru.resx",
+              "ToolTip": "C:\\Users\\\u0413\u0435\u043E\u0440\u0433\u0438\u0439\\Desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\Resources\\GameResource.ru.resx",
+              "RelativeToolTip": "divine_the_number\\Resources\\GameResource.ru.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-05-06T14:05:23.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,7 +56,7 @@
               "RelativeDocumentMoniker": "divine_the_number\\Program.cs",
               "ToolTip": "C:\\Users\\\u0413\u0435\u043E\u0440\u0433\u0438\u0439\\Desktop\\cs_dev\\divine_the_number\\divine_the_number\\divine_the_number\\Program.cs",
               "RelativeToolTip": "divine_the_number\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAIwFYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T07:55:17.332Z",
               "EditorCaption": ""

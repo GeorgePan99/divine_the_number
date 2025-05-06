@@ -29,10 +29,10 @@ C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divin
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\divine_the_number.genruntimeconfig.cache
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\ref\divine_the_number.dll
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\bin\Debug\net9.0\config.json
+C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\divine_the_number.csproj.GenerateResource.cache
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\bin\Debug\net9.0\en\divine_the_number.resources.dll
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\bin\Debug\net9.0\ru\divine_the_number.resources.dll
-C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\divine_the_number.Resourses.Controllers.HomeController.en.resources
-C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\divine_the_number.Resourses.Controllers.HomeController.ru.resources
-C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\divine_the_number.csproj.GenerateResource.cache
+C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\divine_the_number.Resources.GameResource.en.resources
+C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\divine_the_number.Resources.GameResource.ru.resources
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\en\divine_the_number.resources.dll
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\divine_the_number\divine_the_number\obj\Debug\net9.0\ru\divine_the_number.resources.dll
