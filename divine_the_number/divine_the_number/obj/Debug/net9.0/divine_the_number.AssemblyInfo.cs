@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("divine_the_number")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6683bdec8febb3bc9d7226e020fe3e98e3ae2c37")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+347c77c04667b2c7c9488326d2feafbf521461b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("divine_the_number")]
 [assembly: System.Reflection.AssemblyTitleAttribute("divine_the_number")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
