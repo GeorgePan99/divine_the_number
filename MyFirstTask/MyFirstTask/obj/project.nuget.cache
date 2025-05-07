@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QZ/0XL0UPgo=",
+  "dgSpecHash": "Hv4qu304SLE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Георгий\\Desktop\\cs_dev\\divine_the_number\\MyFirstTask\\MyFirstTask\\MyFirstTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.4\\microsoft.extensions.configuration.9.0.4.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.4\\microsoft.extensions.configuration.abstractions.9.0.4.nupkg.sha512",
+    "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration.binder\\9.0.4\\microsoft.extensions.configuration.binder.9.0.4.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\9.0.4\\microsoft.extensions.configuration.environmentvariables.9.0.4.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.4\\microsoft.extensions.configuration.fileextensions.9.0.4.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.4\\microsoft.extensions.configuration.json.9.0.4.nupkg.sha512",

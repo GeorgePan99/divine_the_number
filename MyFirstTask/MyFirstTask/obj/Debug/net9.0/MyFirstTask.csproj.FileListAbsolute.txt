@@ -25,3 +25,5 @@ C:\Users\Георгий\Desktop\cs_dev\divine_the_number\MyFirstTask\MyFirstTask
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\MyFirstTask\MyFirstTask\obj\Debug\net9.0\MyFirstTask.pdb
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\MyFirstTask\MyFirstTask\obj\Debug\net9.0\MyFirstTask.genruntimeconfig.cache
 C:\Users\Георгий\Desktop\cs_dev\divine_the_number\MyFirstTask\MyFirstTask\obj\Debug\net9.0\ref\MyFirstTask.dll
+C:\Users\Георгий\Desktop\cs_dev\divine_the_number\MyFirstTask\MyFirstTask\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Георгий\Desktop\cs_dev\divine_the_number\MyFirstTask\MyFirstTask\bin\Debug\net9.0\appsettings.json

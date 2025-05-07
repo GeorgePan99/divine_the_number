@@ -1,8 +1,16 @@
 ﻿using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
 
 
-int MIN_VALUE = 1;
-int MAX_VALUE = 10;
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .AddEnvironmentVariables()
+    .Build();
+
+
+int MIN_VALUE = configuration.GetValue<int>("min_value");
+int MAX_VALUE = configuration.GetValue<int>("max_value");
 
 var rand = new Random();
 int mystery_vaue = rand.Next(MIN_VALUE, MAX_VALUE + 1);
