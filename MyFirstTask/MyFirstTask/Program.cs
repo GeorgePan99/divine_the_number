@@ -9,17 +9,17 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 
-int MIN_VALUE = configuration.GetValue<int>("min_value");
-int MAX_VALUE = configuration.GetValue<int>("max_value");
+int MinValue = configuration.GetValue<int>("min_value");
+int MaxValue = configuration.GetValue<int>("max_value");
 
 var rand = new Random();
-int mystery_vaue = rand.Next(MIN_VALUE, MAX_VALUE + 1);
+int mysteryValue = rand.Next(MinValue, MaxValue + 1);
 
 
 
 void Greeting(int min, int max)
 {
-    string greeting_text = $"""
+    string GreetingText = $"""
             Добро пожаловать в игру "Угадай число"!
         Наши правила невероятно просты: мы загадываем вам число в диапазоне от {min} до {max},
         а вам предстоит его угадать!
@@ -29,19 +29,19 @@ void Greeting(int min, int max)
             Если вы захотите выйти из игры, напишите "exit".
         Удачи!
         """;
-    Console.WriteLine(greeting_text, min, max);
+    Console.WriteLine(GreetingText, min, max);
     Console.WriteLine();
     Console.WriteLine("Введите предполагаемое число");
 }
 
-void IsValue(int user_value)
+void IsValue(int userValue)
 {
-    if (user_value == mystery_vaue)
+    if (userValue == mysteryValue)
     {
         Console.WriteLine("Вы угадали число! Вы молодец!");
         Process.GetCurrentProcess().Kill();
     }
-    else if (user_value > MAX_VALUE || user_value < MIN_VALUE)
+    else if (userValue > MaxValue || userValue < MinValue)
     {
         Console.WriteLine("Число вне заданных границ!");
         Input();
@@ -53,15 +53,15 @@ void IsValue(int user_value)
     }
 }
 
-void IsCommand(string user_string)
+void IsCommand(string userString)
 {
-    if (user_string == "giveup")
+    if (userString == "giveup")
     {
         Console.WriteLine("В следующий раз повезет!");
-        Console.WriteLine($"Загаданное число: {mystery_vaue}");
+        Console.WriteLine($"Загаданное число: {mysteryValue}");
         Process.GetCurrentProcess().Kill();
     }
-    else if (user_string == "exit")
+    else if (userString == "exit")
     {
         Console.WriteLine("Хорошего дня!");
         Process.GetCurrentProcess().Kill();
@@ -76,18 +76,18 @@ void IsCommand(string user_string)
 
 void Input()
 {
-    string user_input = Console.ReadLine();
+    string userInput = Console.ReadLine();
     try
     {
-        IsValue(Convert.ToInt32(user_input));
+        IsValue(Convert.ToInt32(userInput));
 
     }
     catch
     {
-        IsCommand(user_input);
+        IsCommand(userInput);
     }
 }
 
 
-Greeting(MIN_VALUE, MAX_VALUE);
+Greeting(MinValue, MaxValue);
 Input();
