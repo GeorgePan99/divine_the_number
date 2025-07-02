@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Classes
 {
-    public class ValueValidator : IValueValidation
+    public class ValueValidator : IValueValidator
     {
         private readonly int minValue = 1;
         private readonly int maxValue = 10;

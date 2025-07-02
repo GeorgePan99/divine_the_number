@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Classes
 {
-    public class CommandValidator : ICommandValidation
+    public class CommandValidator : ICommandValidator
     {
         public void IsCommand(string userInput)
         {

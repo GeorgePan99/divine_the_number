@@ -4,17 +4,18 @@ using Microsoft.Extensions.DependencyInjection;
 
 
 var services = new ServiceCollection()
-    .AddTransient<ICommandValidation, CommandValidator>()
-    .AddTransient<IValueValidation, ValueValidator>()
-    .AddTransient<IComparison, Comparator>()
+    .AddTransient<ICommandValidator, CommandValidator>()
+    .AddTransient<IValueValidator, ValueValidator>()
+    .AddTransient<IComparator, Comparator>()
+    .AddTransient<IExiter, Exiter>()
     .AddTransient<Execution>();
-
 
 using var serviceProvider = services.BuildServiceProvider();
 
-IComparison? comparator = serviceProvider.GetService<IComparison>();
-ICommandValidation? commandValidator = serviceProvider.GetService<ICommandValidation>();
-IValueValidation? valueValidator = serviceProvider.GetService<IValueValidation>();
+//IComparison? comparator = serviceProvider.GetService<IComparison>();
+//ICommandValidation? commandValidator = serviceProvider.GetService<ICommandValidation>();
+//IValueValidation? valueValidator = serviceProvider.GetService<IValueValidation>();
 Execution? execution = serviceProvider.GetService<Execution>();
 
+execution.Greetings();
 execution.Execute();

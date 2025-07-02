@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Interfaces
 {
-    public interface IValueValidation
+    public interface IExiter
     {
-        public bool IsValid(string userInput);
+        public bool IsExitOrAgain(string userInput);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DivineNumber.Services.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Interfaces
 {
-    public interface IComparison
+    public interface ICommandValidator
     {
-        public void IsCorrectValue(string userInput);
+        public void IsCommand(string userInput);
     }
 }
