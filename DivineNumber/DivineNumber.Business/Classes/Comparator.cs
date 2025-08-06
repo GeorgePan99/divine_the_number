@@ -1,4 +1,6 @@
 ﻿using DivineNumber.Services.Interfaces;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,23 +13,27 @@ namespace DivineNumber.Services.Classes
     public class Comparator : IComparator
     {
         private int randValue;
-        private readonly int minValue = 1;
-        private readonly int maxValue = 10;
         private readonly IValueValidator validation;
         private readonly ICommandValidator command;
         private readonly IExiter exiter;
+        private readonly ValueRange ValueRange;
+        private readonly IStringLocalizer<SharedResource> localizer;
         public Comparator(IValueValidator validation,
                           ICommandValidator command,
-                          IExiter exiter)
+                          IExiter exiter,
+                          IOptions<ValueRange> options,
+                          IStringLocalizer<SharedResource> localizer)
         {
             this.validation = validation;
             this.command = command;
             this.exiter = exiter;
+            this.ValueRange = options.Value;
+            this.localizer = localizer;
         }
         public void SetRandValue()
         {
             Random random = new Random();
-            randValue = random.Next(minValue, maxValue + 1);
+            randValue = random.Next(ValueRange.MinValue, ValueRange.MaxValue + 1);
         }
         public void IsCorrectValue(string userInput)
         {
@@ -36,9 +42,7 @@ namespace DivineNumber.Services.Classes
             {
                 if (randValue == Convert.ToInt32(userInput))
                 {
-                    Console.WriteLine("Вы угадали!");
-                    Console.WriteLine("Чтобы выйти, введите exit.");
-                    Console.WriteLine("Чтобы сыграть еще раз, введите again.");
+                    Console.WriteLine(localizer["Congratulation"]);
                     bool resolution = false;
                     while (resolution is false)
                     {
@@ -52,7 +56,7 @@ namespace DivineNumber.Services.Classes
                 }
                 else
                 {
-                    Console.WriteLine("Вы не угадали!");
+                    Console.WriteLine(localizer["Mistake"]);
                 }
             }
         }

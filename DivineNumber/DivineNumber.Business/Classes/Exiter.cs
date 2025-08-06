@@ -1,32 +1,34 @@
 ﻿using DivineNumber.Services.Interfaces;
-using System;
-using System.Collections.Generic;
+using Microsoft.Extensions.Localization;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Classes
 {
     public class Exiter : IExiter
     {
+        private readonly IStringLocalizer<SharedResource> localizer;
+        public Exiter(IStringLocalizer<SharedResource> localizer)
+        {
+            this.localizer = localizer;
+        }
         public bool IsExitOrAgain(string userInput)
         {
             userInput = userInput.ToLower();
             if (userInput == "exit")
             {
-                Console.WriteLine($"Хорошего дня!");
+
+                Console.WriteLine(localizer["Farewell"]);
                 Process.GetCurrentProcess().Kill();
                 return true;
             }
             else if (userInput == "again")
             {
-                Console.WriteLine($"Угадайте число еще раз!");
+                Console.WriteLine(localizer["Again"]);
                 return true;
             }
             else
             {
-                Console.WriteLine($"Введите корректную команду.");
+                Console.WriteLine(localizer["IncorrectCommand"]);
                 return false;
             }
         }

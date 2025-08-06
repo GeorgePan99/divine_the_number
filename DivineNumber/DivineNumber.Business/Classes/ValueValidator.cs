@@ -1,34 +1,37 @@
 ﻿using DivineNumber.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Options;
+
 
 namespace DivineNumber.Services.Classes
 {
     public class ValueValidator : IValueValidator
     {
-        private readonly int minValue = 1;
-        private readonly int maxValue = 10;
+        private readonly ValueRange ValueRange;
+        private readonly IStringLocalizer<SharedResource> localizer;
+        public ValueValidator(IOptions<ValueRange> options,
+                              IStringLocalizer<SharedResource> localizer)
+        {
+            this.ValueRange = options.Value;
+            this.localizer = localizer;
+        }
         public bool IsValid(string userInput)
         {
             userInput = userInput.ToLower();
             if (int.TryParse(userInput, out int value) && 
-                value <= maxValue &&
-                value >= minValue)
+                value <= ValueRange.MaxValue &&
+                value >= ValueRange.MinValue)
             {
                 return true;
             }
             else if (!int.TryParse(userInput, out int number))
             {
-                Console.WriteLine($"Некорректные данные!");
+                Console.WriteLine(localizer["IncorrectData"]);
                 return false;
             }
             else
             {
-                Console.WriteLine("Число должно находиться в интервале!");
+                Console.WriteLine(localizer["Range"]);
                 return false;
             }
         }
