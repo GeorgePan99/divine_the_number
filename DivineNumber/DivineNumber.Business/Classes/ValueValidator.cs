@@ -18,20 +18,23 @@ namespace DivineNumber.Services.Classes
         public bool IsValid(string userInput)
         {
             userInput = userInput.ToLower();
-            if (int.TryParse(userInput, out int value) && 
-                value <= ValueRange.MaxValue &&
-                value >= ValueRange.MinValue)
+            if (int.TryParse(userInput, out int number))
             {
-                return true;
-            }
-            else if (!int.TryParse(userInput, out int number))
-            {
-                Console.WriteLine(localizer["IncorrectData"]);
-                return false;
+                if (number <= ValueRange.MaxValue &&
+                    number >= ValueRange.MinValue
+                    )
+                {
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine(localizer["Range"]);
+                    return false;
+                }
             }
             else
             {
-                Console.WriteLine(localizer["Range"]);
+                Console.WriteLine(localizer["IncorrectData"]);
                 return false;
             }
         }
