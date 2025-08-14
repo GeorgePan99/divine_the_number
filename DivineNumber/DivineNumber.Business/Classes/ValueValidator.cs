@@ -15,7 +15,7 @@ namespace DivineNumber.Services.Classes
             this.ValueRange = options.Value;
             this.localizer = localizer;
         }
-        public bool IsValid(string userInput)
+        public bool ValidateValue(string userInput)
         {
             userInput = userInput.ToLower();
             if (int.TryParse(userInput, out int number))

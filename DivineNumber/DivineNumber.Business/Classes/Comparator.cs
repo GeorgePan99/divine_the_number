@@ -14,12 +14,12 @@ namespace DivineNumber.Services.Classes
     {
         private int randValue;
         private readonly IValueValidator validation;
-        private readonly ICommandValidator command;
+        private readonly ICommandHandler command;
         private readonly IExiter exiter;
         private readonly ValueRange ValueRange;
         private readonly IStringLocalizer<SharedResource> localizer;
         public Comparator(IValueValidator validation,
-                          ICommandValidator command,
+                          ICommandHandler command,
                           IExiter exiter,
                           IOptions<ValueRange> options,
                           IStringLocalizer<SharedResource> localizer)
@@ -37,8 +37,8 @@ namespace DivineNumber.Services.Classes
         }
         public void IsCorrectValue(string userInput)
         {
-            command.IsCommand(userInput);
-            if (validation.IsValid(userInput))
+            command.Handle(userInput);
+            if (validation.ValidateValue(userInput))
             {
                 if (randValue == Convert.ToInt32(userInput))
                 {

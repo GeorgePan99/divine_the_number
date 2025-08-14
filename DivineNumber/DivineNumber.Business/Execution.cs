@@ -5,7 +5,7 @@ using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 
 
-public class Execution
+public class Execution: IExecution
 {
     private readonly IComparator comparison;
     private readonly ValueRange ValueRange;

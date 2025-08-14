@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Interfaces
 {
-    public interface ICommandValidator
+    public interface ICommandHandler
     {
-        public void IsCommand(string userInput);
+        public void Handle(string userInput);
     }
 }
