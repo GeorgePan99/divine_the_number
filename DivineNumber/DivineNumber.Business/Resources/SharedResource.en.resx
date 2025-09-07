@@ -117,35 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Again" xml:space="preserve">
-    <value>Guess the number again!</value>
+  <data name="correctCommand" xml:space="preserve">
+    <value>Input correct command</value>
   </data>
-  <data name="Congratulation" xml:space="preserve">
-    <value>You guessed right!
-To exit, type 'exit'.
-To play again, type 'again'.</value>
+  <data name="giveUp" xml:space="preserve">
+    <value>Better luck next time!
+The hidden number was {0}</value>
   </data>
-  <data name="IncorrectCommand" xml:space="preserve">
-    <value>Insert the correct command.</value>
+  <data name="Greeting" xml:space="preserve">
+    <value>Hello everyone!
+You are playing the game "Guess the number"!
+A number from {0} to {1} is given and you need to guess it.
+To end the game, enter '{2}'
+To give up, enter '{3}'
+To start over, enter '{4}'</value>
   </data>
-  <data name="Farewell" xml:space="preserve">
-    <value>Have a good day!</value>
+  <data name="incorrectData" xml:space="preserve">
+    <value>Incorrect data</value>
   </data>
-  <data name="Greetings" xml:space="preserve">
-    <value>You are in the "Guess the Number" game!
-Your task is to guess the number 
-in the range from {0} to {1}.
-If you want to exit, enter 'eixt' in the console.
-If you want to sign up, enter 'giveup'.
-Good luck!</value>
+  <data name="newGame" xml:space="preserve">
+    <value>New game!</value>
   </data>
-  <data name="Mistake" xml:space="preserve">
-    <value>It's wrong!</value>
+  <data name="newTry" xml:space="preserve">
+    <value>You've decided to play again! Let's go!</value>
   </data>
-  <data name="IncorrectData" xml:space="preserve">
-    <value>Incorrect data!</value>
+  <data name="outOfRange" xml:space="preserve">
+    <value>It is out of range</value>
   </data>
-  <data name="Range" xml:space="preserve">
-    <value>Number shold be in correct range!</value>
+  <data name="toExit" xml:space="preserve">
+    <value>Press any key to exit</value>
+  </data>
+  <data name="victory" xml:space="preserve">
+    <value>You've won!
+Do you want to play again or quit the game?</value>
+  </data>
+  <data name="wrong" xml:space="preserve">
+    <value>That is wrong</value>
   </data>
 </root>

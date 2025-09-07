@@ -117,35 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Again" xml:space="preserve">
-    <value>Угадайте число еще раз!</value>
+  <data name="correctCommand" xml:space="preserve">
+    <value>Введите корректную команду</value>
   </data>
-  <data name="Congratulation" xml:space="preserve">
-    <value>Вы угадали!
-Чтобы выйти, введите 'exit'.
-Чтобы сыграть еще раз, введите 'again'.</value>
+  <data name="giveUp" xml:space="preserve">
+    <value>Повезет в следующий раз!
+Загаданным числом было {0}</value>
   </data>
-  <data name="IncorrectCommand" xml:space="preserve">
-    <value>Введите корректную команду.</value>
+  <data name="Greeting" xml:space="preserve">
+    <value>Всем привет!
+Вы играете в игру "Угадай число"!
+Загадано число от {0} до {1} и вам нужно его угадать.
+Чтобы закончить игру, введите '{2}'
+Чтобы сдаться, введите '{3}'
+Чтобы начать заново, введите '{4}'</value>
   </data>
-  <data name="Farewell" xml:space="preserve">
-    <value>Хорошего дня!</value>
+  <data name="incorrectData" xml:space="preserve">
+    <value>Некорректные данные</value>
   </data>
-  <data name="Greetings" xml:space="preserve">
-    <value>Вы попали в игру 'Угадай число'!
-Ваша задача - угадать число
-в диапазоне от {0} до {1}.
-Если захотите выйти, введите в консоль 'eixt'.
-Если захотите здаться, введите 'giveup'.
-Удачи!</value>
+  <data name="newGame" xml:space="preserve">
+    <value>Новая игра!</value>
   </data>
-  <data name="Mistake" xml:space="preserve">
-    <value>Вы не угадали!</value>
+  <data name="newTry" xml:space="preserve">
+    <value>Вы решили сыграть сначала! Пусть будет так!</value>
   </data>
-  <data name="IncorrectData" xml:space="preserve">
-    <value>Некорректные данные!</value>
+  <data name="outOfRange" xml:space="preserve">
+    <value>Число вне диапазона</value>
   </data>
-  <data name="Range" xml:space="preserve">
-    <value>Число должно находиться в интервале!</value>
+  <data name="toExit" xml:space="preserve">
+    <value>Для выхода нажмите любую клавишу</value>
+  </data>
+  <data name="victory" xml:space="preserve">
+    <value>Вы выиграли!
+Хотите сыграть еще раз или выйти из игры?</value>
+  </data>
+  <data name="wrong" xml:space="preserve">
+    <value>Неверно!</value>
   </data>
 </root>

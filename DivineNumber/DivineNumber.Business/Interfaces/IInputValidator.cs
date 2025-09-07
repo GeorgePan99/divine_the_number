@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Interfaces
 {
-    public interface IExiter
+    public interface IInputValidator
     {
-        public bool IsExitOrAgain(string userInput);
+        public bool IsNumber(string input);
+        public bool IsCommand(string input);
+        public bool IsInRange(string input);
     }
 }

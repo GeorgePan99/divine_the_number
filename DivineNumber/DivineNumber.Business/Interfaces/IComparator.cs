@@ -8,7 +8,6 @@ namespace DivineNumber.Services.Interfaces
 {
     public interface IComparator
     {
-        public void IsCorrectValue(string userInput);
-        public void SetRandValue();
+        public bool Compare(string input);
     }
 }

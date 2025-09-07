@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DivineNumber.Services.Interfaces
 {
-    public interface IValueValidator
+    public interface ILocalizer
     {
-        public bool ValidateValue(string userInput);
+        string GetString(string key);
     }
 }
