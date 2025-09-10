@@ -3,22 +3,14 @@
 
 namespace DivineNumber.Services.Classes
 {
-    internal class Comparator: IComparator
+    internal class Comparator(IValueGenerator valueGenerator): IComparator
     {
-        public IValueGenerator valueGenerator;
-        public IInputValidator inputValidator;
-        public Comparator(IValueGenerator valueGenerator,
-                          IInputValidator inputValidator)
-        {
-            this.valueGenerator = valueGenerator;
-            this.inputValidator = inputValidator;
-        }
+        private readonly IValueGenerator _valueGenerator = valueGenerator;
+        
         public bool Compare(string input)
         {
-            int res = int.Parse(input);
-            if (res == valueGenerator.GetRandomValue())
-                return true;
-            return false;
+            var res = int.Parse(input);
+            return res == _valueGenerator.GetRandomValue();
         }
     }
 }

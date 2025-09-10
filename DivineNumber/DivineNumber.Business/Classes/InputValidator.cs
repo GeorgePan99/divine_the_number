@@ -1,47 +1,31 @@
-﻿using DivineNumber.Services.AddClasses;
-using DivineNumber.Services.Interfaces;
+﻿using DivineNumber.Services.Interfaces;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using DivineNumber.Services.AdditionalClasses;
 
 namespace DivineNumber.Services.Classes
 {
-    internal class InputValidator: IInputValidator
+    internal class InputValidator(IOptions<ValueRange> options,
+                                  IOptions<Commands> commands): IInputValidator
     {
-        private readonly ValueRange _valueRange;
-        private readonly Commands _commands;
-        public InputValidator(IOptions<ValueRange> options,
-                              IOptions<Commands> commands)
-        {
-            this._valueRange = options.Value;
-            this._commands = commands.Value;
-        }
+        private readonly ValueRange _valueRange = options.Value;
+        private readonly Commands _commands = commands.Value;
         public bool IsNumber(string input)
         {
-            if (int.TryParse(input, out int result))
-                return true;
-            return false;
+            return int.TryParse(input, out int result);
         }
         public bool IsInRange(string input)
         {
-            bool res = int.TryParse(input, out int result);
-            if (_valueRange.MinValue <= result && result <= _valueRange.MaxValue)
-                return true;
-            return false;
+            var res = int.TryParse(input, out int result);
+            return _valueRange.MinValue <= result && result <= _valueRange.MaxValue;
         }
 
         public bool IsCommand(string input)
         {
-            if (input.ToLower() == _commands.NewTry)
+            if (string.Equals(input, _commands.NewTry, StringComparison.CurrentCultureIgnoreCase))
                 return true;
-            if (input.ToLower() == _commands.Exit)
+            if (string.Equals(input, _commands.Exit, StringComparison.CurrentCultureIgnoreCase))
                 return true;
-            if (input.ToLower() == _commands.GiveUp)
+            if (string.Equals(input, _commands.GiveUp, StringComparison.CurrentCultureIgnoreCase))
                 return true;
             return false;
         }

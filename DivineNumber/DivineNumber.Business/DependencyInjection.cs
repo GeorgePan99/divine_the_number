@@ -1,5 +1,4 @@
-﻿using DivineNumber.Services.AddClasses;
-using DivineNumber.Services.AdditionalClasses;
+﻿using DivineNumber.Services.AdditionalClasses;
 using DivineNumber.Services.Classes;
 using DivineNumber.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
@@ -15,20 +14,17 @@ namespace DivineNumber.Services
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables()
                 .Build();
-
+            
+            
             services
                 .AddSingleton<IValueGenerator, ValueGenerator>()
                 .AddSingleton<IInputValidator, InputValidator>()
                 .AddSingleton<IComparator, Comparator>()
-                .AddSingleton<IGreetings, Greetings>()
-                .AddSingleton<ValueRange>()
-                .AddSingleton<Commands>()
                 .AddLogging()
                 .AddLocalization(options =>
                 {
                     options.ResourcesPath = "Resources";
                 })
-                .AddSingleton<LanguageField>()
                 .AddSingleton<ILocalizer, ResourceLocalizer>();
 
             services.Configure<ValueRange>(config.GetSection(key: "Range"));

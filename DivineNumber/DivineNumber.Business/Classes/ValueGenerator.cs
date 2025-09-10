@@ -1,11 +1,6 @@
-﻿using DivineNumber.Services.AddClasses;
-using DivineNumber.Services.Interfaces;
+﻿using DivineNumber.Services.Interfaces;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DivineNumber.Services.AdditionalClasses;
 
 namespace DivineNumber.Services.Classes
 {
@@ -14,17 +9,16 @@ namespace DivineNumber.Services.Classes
         private int _randomValue;
         private readonly ValueRange _valueRange;
         private readonly int _additive = 1;
+        private readonly Random _rnd = new Random();
         public ValueGenerator(IOptions<ValueRange> options)
         {
-            this._valueRange = options.Value;
-            Random rnd = new Random();
-            this._randomValue = rnd.Next(_valueRange.MinValue,
+            _valueRange = options.Value;
+            _randomValue = _rnd.Next(_valueRange.MinValue,
                                     _valueRange.MaxValue + _additive);
         }
         public void SetRandomValue()
         {
-            Random rnd = new Random();
-            this._randomValue = rnd.Next(_valueRange.MinValue,
+            this._randomValue = _rnd.Next(_valueRange.MinValue,
                                     _valueRange.MaxValue + _additive);
         }
         public int GetRandomValue()
