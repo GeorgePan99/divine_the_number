@@ -15,17 +15,22 @@ namespace DivineNumber.Services.Classes
         }
         public bool IsInRange(string input)
         {
-            var res = int.TryParse(input, out int result);
-            return _valueRange.MinValue <= result && result <= _valueRange.MaxValue;
+            bool res = int.TryParse(input, out int result);
+            if (res)
+                return _valueRange.MinValue <= result && result <= _valueRange.MaxValue;
+            return false;
         }
 
         public bool IsCommand(string input)
         {
-            if (string.Equals(input, _commands.NewTry, StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(input, _commands.NewTry, 
+                    StringComparison.CurrentCultureIgnoreCase))
                 return true;
-            if (string.Equals(input, _commands.Exit, StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(input, _commands.Exit, 
+                    StringComparison.CurrentCultureIgnoreCase))
                 return true;
-            if (string.Equals(input, _commands.GiveUp, StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(input, _commands.GiveUp, 
+                    StringComparison.CurrentCultureIgnoreCase))
                 return true;
             return false;
         }
