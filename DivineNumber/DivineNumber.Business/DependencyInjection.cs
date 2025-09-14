@@ -17,7 +17,7 @@ namespace DivineNumber.Services
             
             
             services
-                .AddSingleton<IValueGenerator, ValueGenerator>()
+                .AddSingleton<IHiddenValueGenerator, HiddenValueGenerator>()
                 .AddSingleton<IInputValidator, InputValidator>()
                 .AddSingleton<IComparator, Comparator>()
                 .AddLogging()

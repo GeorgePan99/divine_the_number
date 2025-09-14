@@ -1,8 +1,8 @@
 ﻿namespace DivineNumber.Services.Interfaces
 {
-    public interface IValueGenerator
+    public interface IHiddenValueGenerator
     {
-        public void SetRandomValue();
-        public int GetRandomValue();
+        public void SetHiddenValue();
+        public int GetHiddenValue();
     }
 }

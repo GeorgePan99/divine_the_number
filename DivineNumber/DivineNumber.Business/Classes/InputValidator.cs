@@ -4,21 +4,23 @@ using DivineNumber.Services.AdditionalClasses;
 
 namespace DivineNumber.Services.Classes
 {
-    internal class InputValidator(IOptions<ValueRange> options,
-                                  IOptions<Commands> commands): IInputValidator
+    internal class InputValidator: IInputValidator
     {
-        private readonly ValueRange _valueRange = options.Value;
-        private readonly Commands _commands = commands.Value;
+        private readonly ValueRange _valueRange;
+        private readonly Commands _commands;
+        public InputValidator(IOptions<ValueRange> options,
+                              IOptions<Commands> commands)
+        {
+            _valueRange = options.Value;
+            _commands = commands.Value;
+        }
         public bool IsNumber(string input)
         {
             return int.TryParse(input, out int result);
         }
-        public bool IsInRange(string input)
+        public bool IsInRange(int input)
         {
-            bool res = int.TryParse(input, out int result);
-            if (res)
-                return _valueRange.MinValue <= result && result <= _valueRange.MaxValue;
-            return false;
+            return _valueRange.MinValue <= input && input <= _valueRange.MaxValue;
         }
 
         public bool IsCommand(string input)

@@ -2,6 +2,6 @@
 {
     public interface IComparator
     {
-        public bool Compare(string input);
+        public bool CompareInputAndHiddenValue(string input);
     }
 }

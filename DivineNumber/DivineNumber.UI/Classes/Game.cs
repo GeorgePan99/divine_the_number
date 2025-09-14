@@ -7,106 +7,117 @@ using Microsoft.Extensions.Options;
 
 namespace DivineNumber.UI.Classes;
 
-public class Game(IValueGenerator valueGenerator,
-                  IComparator comparator,
-                  IInputValidator inputValidator,
-                  IStringLocalizer<SharedResource> localizer,
-                  IOptions<ValueRange> valueRange,
-                  IOptions<Commands> commands): IGame
+public class Game: IGame
 {
-    private readonly IValueGenerator _valueGenerator = valueGenerator;
-    private readonly IComparator _comparator = comparator;
-    private readonly IInputValidator _inputValidator = inputValidator;
-    private readonly IStringLocalizer<SharedResource> _localizer = localizer;
-    private readonly IOptions<ValueRange> _valueRange = valueRange;
-    private readonly IOptions<Commands> _commands = commands;
+    private readonly IHiddenValueGenerator _valueGenerator;
+    private readonly IComparator _comparator;
+    private readonly IInputValidator _inputValidator;
+    private readonly IStringLocalizer<SharedResource> _localizer;
+    private readonly IOptions<ValueRange> _valueRange;
+    private readonly IOptions<Commands> _commands;
     private bool _running = true;
     private bool _afterVictoryProcess = true;
 
+    public Game
+    (
+        IHiddenValueGenerator valueGenerator,
+        IComparator comparator,
+        IInputValidator inputValidator,
+        IStringLocalizer<SharedResource> localizer,
+        IOptions<ValueRange> valueRange,
+        IOptions<Commands> commands
+    )
+    {
+        _valueGenerator = valueGenerator;
+        _comparator = comparator;
+        _inputValidator = inputValidator;
+        _localizer = localizer;
+        _valueRange = valueRange;
+        _commands = commands;
+    }
+
     public void StartGame()
     {
+        Console.WriteLine(_localizer["Greeting"],
+            _valueRange.Value.MinValue,
+            _valueRange.Value.MaxValue,
+            _commands.Value.Exit,
+            _commands.Value.GiveUp,
+            _commands.Value.NewTry);
+        
         while (_running)
         {
             string? userInput = Console.ReadLine();
             if (IsInSpot(userInput))
-                AfterVictory(userInput);
+            {
+                Console.WriteLine(_localizer["victory"]);
+                DefineCommand();
+            }
             else if (IsWrong(userInput))
-                Console.WriteLine(_localizer.GetString("wrong"));
+                Console.WriteLine(_localizer["wrong"]);
             else if (IsNotInRange(userInput))
-                Console.WriteLine(_localizer.GetString("outOfRange"));
+                Console.WriteLine(_localizer["outOfRange"]);
             else if (_inputValidator.IsCommand(userInput))
                 DefineCommand(userInput);
             else
-                Console.WriteLine(_localizer.GetString("incorrectData"));
+                Console.WriteLine(_localizer["incorrectData"]);
         }
     }
 
-    public bool IsInSpot(string userInput)
+    private bool IsInSpot(string userInput)
     {
         return _inputValidator.IsNumber(userInput) &&
-               _inputValidator.IsInRange(userInput) &&
-               _comparator.Compare(userInput);
+               _inputValidator.IsInRange(int.Parse(userInput)) &&
+               _comparator.CompareInputAndHiddenValue(userInput);
     }
     
-    public bool IsWrong(string userInput)
+    private bool IsWrong(string userInput)
     {
         return _inputValidator.IsNumber(userInput) &&
-               _inputValidator.IsInRange(userInput) &&
-               !_comparator.Compare(userInput);
+               _inputValidator.IsInRange(int.Parse(userInput)) &&
+               !_comparator.CompareInputAndHiddenValue(userInput);
     }
     
-    public bool IsNotInRange(string userInput)
+    private bool IsNotInRange(string userInput)
     {
         return _inputValidator.IsNumber(userInput) &&
-               !_inputValidator.IsInRange(userInput) &&
-               !_comparator.Compare(userInput);
+               !_inputValidator.IsInRange(int.Parse(userInput));
     }
-    public void DefineCommand(string userInput)
+    private void DefineCommand(string userInput = "")
     {
-        if (string.Equals(userInput, _commands.Value.Exit,
-                StringComparison.CurrentCultureIgnoreCase))
-        {
-            Console.WriteLine(_localizer.GetString("exit"));
-            _running = false;
-        }
-        else if (string.Equals(userInput, _commands.Value.NewTry,
-                StringComparison.CurrentCultureIgnoreCase))
-        {
-            _valueGenerator.SetRandomValue();
-            Console.WriteLine(_localizer.GetString("newTry"));
-        }
-        else if (string.Equals(userInput, _commands.Value.GiveUp,
-                     StringComparison.CurrentCultureIgnoreCase))
-        {
-            Console.WriteLine(_localizer.GetString("giveUp"), 
-                _valueGenerator.GetRandomValue());
-            _running = false;
-        }
-    }
-
-    public void AfterVictory(string userInput)
-    {
-        Console.WriteLine(_localizer.GetString("victory"));
         while (_afterVictoryProcess)
         {
-            string? newCommand = Console.ReadLine();
-            if (string.Equals(newCommand, _commands.Value.Exit,
+            string? command;
+            command = string.IsNullOrEmpty(userInput) ? Console.ReadLine() : userInput;
+            
+            if (string.Equals(command, _commands.Value.Exit,
                     StringComparison.CurrentCultureIgnoreCase))
             {
-                Console.WriteLine(_localizer.GetString("toExit"));
+                Console.WriteLine(_localizer["toExit"]);
                 Console.ReadKey();
                 _afterVictoryProcess = false;
                 _running = false;
             }
-            else if (string.Equals(newCommand, _commands.Value.NewTry, 
+            else if (string.Equals(command, _commands.Value.NewTry,
                          StringComparison.CurrentCultureIgnoreCase))
             {
-                _valueGenerator.SetRandomValue();
-                Console.WriteLine(_localizer.GetString("newGame"));
+                _valueGenerator.SetHiddenValue();
+                Console.WriteLine(_localizer["newTry"]);
                 _afterVictoryProcess = false;
             }
+            else if (string.Equals(command, _commands.Value.GiveUp,
+                         StringComparison.CurrentCultureIgnoreCase) &&
+                     userInput.Length > 0)
+            {
+                Console.WriteLine(_localizer.GetString("giveUp"),
+                    _valueGenerator.GetHiddenValue());
+                _afterVictoryProcess = false;
+                _running = false;
+            }
             else
-                Console.WriteLine(_localizer.GetString("correctCommand"));
+            {
+                Console.WriteLine(_localizer["incorrectData"]);
+            }
         }
     }
 }
